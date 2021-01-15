@@ -5,7 +5,12 @@ const Constraint = Matter.Constraint;
 
 var engine,world;
 var ground;
-var wall1,wall2,wall3,wall4;
+var plinko = [];
+var particle = []; 
+var division = [];
+var division
+
+/*var wall1,wall2,wall3,wall4;
 var division1,division2,division3,division4,division5;
 
 var plinko1,plinko2,plinko3,plinko4,plinko5;
@@ -15,7 +20,7 @@ var plinko16,plinko17,plinko18;
 
 var par1,par2,par3,par4,par5;
 var par6,par7,par8,par9,par10;
-var par11,par12,pa13,par14;
+var par11,par12,pa13,par14;*/
 
 function setup() {
   createCanvas(600,800);
@@ -26,7 +31,7 @@ function setup() {
 
   ground = new Ground(350,750,800,15);
 
-  wall1 = new Wall(350,5,800,15);
+/*  wall1 = new Wall(350,5,800,15);
   wall2 = new Wall(595,5,15,1600);
   wall3 = new Wall(5,5,15,1600);
   wall4 = new Wall(350,795,800,15);
@@ -74,7 +79,11 @@ function setup() {
   par11 = new Particle(150,50,10,10);
   par12 = new Particle(250,50,10,10);
   par13 = new Particle(350,50,10,10);
-  par14 = new Particle(550,50,10,10);
+  par14 = new Particle(550,50,10,10);*/
+
+  for(var k = 0; k <=width; k = k+100){
+    division.push(new Division(k,height-divisionHeight/2,10,divisionHeight));
+  }
 }
 
 function draw() {
