@@ -4,11 +4,11 @@ const Bodies = Matter.Bodies;
 const Constraint = Matter.Constraint;
 
 var engine,world;
-var ground;
+var ground = [];
 var plinko = [];
 var particle = []; 
 var division = [];
-var division
+
 
 /*var wall1,wall2,wall3,wall4;
 var division1,division2,division3,division4,division5;
@@ -82,15 +82,52 @@ function setup() {
   par14 = new Particle(550,50,10,10);*/
 
   for(var k = 0; k <=width; k = k+100){
-    division.push(new Division(k,height-divisionHeight/2,10,divisionHeight));
+    division.push(new Wall(k,600,15,300));
   }
+  for(var a = 0; a <= width; a = a+100){
+    plinko.push(new Plinko(a,100,15,15));
+  }
+  for(var a = 0; a <= width; a = a+100){
+    plinko.push(new Plinko(a,200,15,15));
+  }
+  for(var a = 0; a <= width; a = a+100){
+    plinko.push(new Plinko(a,300,15,15));
+  }
+  for(var a = 0; a <= width; a = a+100){
+    plinko.push(new Plinko(a,400,15,15));
+  }
+  for(var b = 0; b <= width; b = b+25){
+    particle.push(new Particle(b,0,10,10));
+  }
+  
+ 
+ //var render = Matter.Render.create({element:document.body,engine:engine,options:{width:600,height:800}})
+ //Matter.Render.run(render);
 }
 
 function draw() {
   Engine.update(engine);
-  background(0);  
+  background(0);
+  for(i = 0; i<division.length; i++){
+    division[i].display();
+  }
+  for(i = 0; i<plinko.length; i++){
+    plinko[i].display();
+  }
+  for(i = 0; i<plinko.length; i++){
+    plinko[i].display();
+  }
+  for(i = 0; i<plinko.length; i++){
+    plinko[i].display();
+  }
+  for(i = 0; i<plinko.length; i++){
+    plinko[i].display();
+  }
+  for(i = 0; i<particle.length; i++){
+    particle[i].display();
+  }
   ground.display();
-  wall1.display();
+ /* wall1.display();
   wall2.display();
   wall3.display();
   wall4.display();
@@ -130,7 +167,7 @@ function draw() {
   par11.display();
   par12.display();
   par13.display();
-  par14.display();
+  par14.display();*/
   
   drawSprites();
 }
